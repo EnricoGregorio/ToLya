@@ -12,13 +12,13 @@
     --color0: #F2F2F2;
     --color1: #F9133A;
     --color2: #6B040B;
+    --color3: #111;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
-    background-color: var(--color2);
 }
 
 /* Classe para caso quisermos esconder algo. */
@@ -26,9 +26,12 @@ body {
     display: none;
 }
 
-main {
+
+/* Página da carta */
+#message {
     width: 100%;
     height: 100%;
+    background-color: var(--color2);
 }
 
 /* Seção tolya */
@@ -45,6 +48,7 @@ main {
 #tolya>p {
     font-size: 2.3em;
     margin-bottom: 30px;
+    margin-top: 30px;
     font-family: 'Leckerli One';
     color: var(--color0);
 }
@@ -98,3 +102,9 @@ main {
 #heart:hover {
     height: 200px;
 }
+
+.calm-alert {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Página principal / Onde ficarão os mimos */
