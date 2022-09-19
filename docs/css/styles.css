@@ -55,7 +55,7 @@ body {
 
 /* Carta em CSS */
 #letter {
-    background-image: url('/docs/img/letter.jpg');
+    background-image: url('https://enricogregorio.github.io/ToLya/img/letter.jpg');
     width: 700px;
     height: 350px;
     display: flex;
