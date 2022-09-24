@@ -102,10 +102,13 @@ function closeModal() {
 }
 
 // Evento de click nos botões da Janela Modal.
-for (let i = 0; i < btnsOpenModal.length; i++) {
-    btnsOpenModal[i].addEventListener('click', () => openModal(i));
+try {
+    for (let i = 0; i < btnsOpenModal.length; i++) {
+        btnsOpenModal[i].addEventListener('click', () => openModal(i));
+    }
+} catch (error) {
+    console.log('Não estamos na página principal.');
 }
-
 // Evento que fechará a janela pelo Overlay e evento que fechará a janela pelo botão de fechar.
 overlay.addEventListener('click', closeModal);
 btnCloseModal.addEventListener('click', closeModal);
