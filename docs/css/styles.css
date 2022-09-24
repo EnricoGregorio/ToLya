@@ -211,4 +211,9 @@ h1 {
         max-width: 80%;
         height: 220px;
     }
+
+    #hello {
+        width: 90%;
+        height: 220px;
+    }
 }
