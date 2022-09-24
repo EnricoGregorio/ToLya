@@ -185,6 +185,7 @@ h1 {
 .she {
     margin: 10px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 8px #70091a94;
 }
 
 .reveal {
@@ -210,6 +211,10 @@ h1 {
     #letter {
         max-width: 80%;
         height: 220px;
+    }
+
+    img {
+        max-width: 350px;
     }
 
     #hello {
