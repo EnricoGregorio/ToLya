@@ -18,7 +18,7 @@ function loadPage() {
 }
 
 function showMessage() {
-    if (dayRest === 6) {
+    if (dayRest === 0) {
         alertMsg.textContent = "Chegou o dia!!! Feliz dois meses minha vida! Eu te amo muito💗💗💗!";
         alertMsg.classList.remove('hidden');
         setTimeout(loadPage, 5000);
