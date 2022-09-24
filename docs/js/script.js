@@ -13,9 +13,15 @@ const dayRest = 30 - day;
 
 let countOfClicks = 0;
 
+function loadPage() {
+    return window.location.assign('gallery.html');
+}
+
 function showMessage() {
-    if (dayRest === 0) {
-        window.location.assign('gallery.html');
+    if (dayRest === 6) {
+        alertMsg.textContent = "Chegou o dia!!! Feliz dois meses minha vida! Eu te amo muito💗💗💗!";
+        alertMsg.classList.remove('hidden');
+        setTimeout(loadPage, 5000);
     } else {
         countOfClicks++;
         switch (countOfClicks) {
@@ -40,3 +46,23 @@ try {
 } catch (error) {
     console.log('Não estamos na página da carta.');
 }
+
+// Página principal
+
+// Função para revelar as photos ao scrollar.
+function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    reveals.forEach((reveal) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveal.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible)
+            reveal.classList.add('active');
+        else
+            reveal.classList.remove('active');
+    });
+}
+
+window.addEventListener('scroll', reveal)

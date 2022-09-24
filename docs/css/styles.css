@@ -11,7 +11,7 @@
 :root {
     --color0: #F2F2F2;
     --color1: #F9133A;
-    --color2: #6B040B;
+    --color2: #a30d26;
     --color3: #111;
 }
 
@@ -19,6 +19,13 @@ html,
 body {
     height: 100%;
     width: 100%;
+}
+
+/* definição das imagens */
+img {
+    image-rendering: optimizeQuality;
+    width: 100%;
+    max-width: 400px;
 }
 
 /* Classe para caso quisermos esconder algo. */
@@ -113,11 +120,95 @@ body {
 }
 
 
+
+
+/* Página principal / Onde ficarão os mimos */
+#video {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+#hello {
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(48, 5, 5, 0.418);
+}
+
+#ily {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://enricogregorio.github.io/ToLya/img/bg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Leckerli One', Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    color: var(--color1);
+}
+
+#photos {
+    background-color: var(--color1);
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+#photos>h2 {
+    color: var(--color0);
+    font-family: 'Life Savers';
+    font-weight: 800;
+    font-size: 5em;
+    padding: 20px 0;
+}
+
+.items {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.she {
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(144px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#cards {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color3);
+}
+
+/* Mobile */
 @media screen and (max-width: 700px) {
     #letter {
         max-width: 80%;
         height: 220px;
     }
 }
-
-/* Página principal / Onde ficarão os mimos */
