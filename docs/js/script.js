@@ -8,7 +8,7 @@ const calmMsg = window.document.querySelector('.calm');
 const btnOpen = window.document.querySelector('#heart');
 const daysMsg = window.document.querySelector('#days');
 
-const day = Number(date.getDate());
+const day = date.getDate();
 const dayRest = 30 - day;
 
 let countOfClicks = 0;
@@ -18,7 +18,7 @@ function loadPage() {
 }
 
 function showMessage() {
-    if (dayRest === 0) {
+    if (dayRest === 6) {
         alertMsg.textContent = "Chegou o dia!!! Feliz dois meses minha vida! Eu te amo muito💗💗💗!";
         alertMsg.classList.remove('hidden');
         setTimeout(loadPage, 5000);
@@ -71,9 +71,27 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
+const phrase = document.querySelector('#phrase');
 
 // Função para mostrar e função para esconder as classes 'modal' e 'overlay'.
-function openModal() {
+function openModal(i) {
+    if (btnsOpenModal[i].classList.contains('p1')) {
+        phrase.textContent = 'Que nosso amor seja eterno enquanto dure.'
+    } else if (btnsOpenModal[i].classList.contains('p2')) {
+        phrase.textContent = 'Às vezes eu acho que o "Eu te amo" é pouco para definir o quanto eu sinto por você.';
+    } else if (btnsOpenModal[i].classList.contains('p3')) {
+        phrase.textContent = 'Você é o mais lindo, adorável, fofo, lindo, deslumbrante, sensual e deslumbrante. Você é o meu tudo. Eu simplesmente não consigo imaginar minha vida sem você.';
+    } else if (btnsOpenModal[i].classList.contains('p4')) {
+        phrase.textContent = 'Não consigo imaginar uma vida sem você, querida. Eu me sinto sortudo por ter você em minha vida.';
+    } else if (btnsOpenModal[i].classList.contains('p5')) {
+        phrase.textContent = 'Meu amor, devo ser o homem mais sortudo por ter alguém como você em minha vida! Todos os dias da minha vida são lindos por sua causa! Você é o meu tudo!';
+    } else if (btnsOpenModal[i].classList.contains('p6')) {
+        phrase.textContent = 'Eu só quero que nosso amor dure. Porque você é único, não consigo tirar você da minha mente. Eu amo Você.';
+    } else if (btnsOpenModal[i].classList.contains('p7')) {
+        phrase.textContent = 'Posso não ser um namorado perfeito. Mas meu amor por você é o mais verdadeiro de todos. Cada batida do meu coração diz que é verdade!';
+    } else if (btnsOpenModal[i].classList.contains('p8')) {
+        phrase.textContent = 'As palavras serão insuficientes se eu quiser descrever o quanto você significa para mim, mas espero que meu amor diga a você o que meus pensamentos não conseguem! Te amo princeso.';
+    }
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
 }
@@ -85,10 +103,7 @@ function closeModal() {
 
 // Evento de click nos botões da Janela Modal.
 for (let i = 0; i < btnsOpenModal.length; i++) {
-    btnsOpenModal[i].addEventListener('click', openModal);
-    if (i === 0) {
-        console.log(btnsOpenModal[i]);
-    }
+    btnsOpenModal[i].addEventListener('click', () => openModal(i));
 }
 
 // Evento que fechará a janela pelo Overlay e evento que fechará a janela pelo botão de fechar.
