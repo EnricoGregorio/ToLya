@@ -101,14 +101,16 @@ function closeModal() {
     overlay.classList.add('hidden');
 }
 
-// Evento de click nos botões da Janela Modal.
+
 try {
+    // Evento de click nos botões da Janela Modal.
     for (let i = 0; i < btnsOpenModal.length; i++) {
         btnsOpenModal[i].addEventListener('click', () => openModal(i));
     }
+
+    // Evento que fechará a janela pelo Overlay e evento que fechará a janela pelo botão de fechar.
+    overlay.addEventListener('click', closeModal);
+    btnCloseModal.addEventListener('click', closeModal);
 } catch (error) {
     console.log('Não estamos na página principal.');
 }
-// Evento que fechará a janela pelo Overlay e evento que fechará a janela pelo botão de fechar.
-overlay.addEventListener('click', closeModal);
-btnCloseModal.addEventListener('click', closeModal);
