@@ -18,7 +18,6 @@ function loadPage() {
 }
 
 function showMessage() {
-    if (dayRest === 0) {
         alertMsg.textContent = "Chegou o dia!!! Feliz dois meses minha vida! Eu te amo muito💗💗💗!";
         alertMsg.classList.remove('hidden');
         setTimeout(loadPage, 5000);
@@ -65,4 +64,32 @@ function reveal() {
     });
 }
 
-window.addEventListener('scroll', reveal)
+window.addEventListener('scroll', reveal);
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
+
+// Função para mostrar e função para esconder as classes 'modal' e 'overlay'.
+function openModal() {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+function closeModal() {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+// Evento de click nos botões da Janela Modal.
+for (let i = 0; i < btnsOpenModal.length; i++) {
+    btnsOpenModal[i].addEventListener('click', openModal);
+    if (i === 0) {
+        console.log(btnsOpenModal[i]);
+    }
+}
+
+// Evento que fechará a janela pelo Overlay e evento que fechará a janela pelo botão de fechar.
+overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);
